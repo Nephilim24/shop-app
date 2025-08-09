@@ -1,0 +1,23 @@
+.button {
+    border-radius: 28px;
+    box-shadow: 0 10px 40px 0 rgba(122, 129, 190, 0.16);
+    background: var(--primary-color);
+    padding: 20px 76px;
+    // max-width: 248px;
+    opacity: 0.8;
+    transition: all .5s;
+
+    &:hover {
+        opacity: 1;
+        transition: all .5s;
+    }
+
+    & span {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    }
+}

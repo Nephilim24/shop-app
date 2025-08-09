@@ -9,4 +9,4 @@ createRoot(document.getElementById("root")!).render(
   </StrictMode>
 );
 
-// !
+// ! Доделать fonts.scss и root.css

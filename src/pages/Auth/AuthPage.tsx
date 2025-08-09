@@ -1,7 +1,9 @@
+import AuthForm from "../../features/auth/ui/AuthForm";
+
 const AuthPage = () => {
-    return(
-    <></>
-    );
-}
+  return (
+  <AuthForm />
+  );
+};
 
 export default AuthPage;
