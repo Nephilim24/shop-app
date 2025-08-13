@@ -1,4 +1,4 @@
-const MainPage: React.FC = () => {
+const MainPage:React.FC = ()=>{
     return (
         <></>
     );

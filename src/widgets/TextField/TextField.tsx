@@ -1,28 +1,26 @@
-import { useState } from "react";
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface TextFieldProps {
-  type: string;
-  title: string;
-  placeholder: string;
+    type: string;
+    title: string;
+    placeholder: string;
 }
 
-const TextField: React.FC<TextFieldProps> = ({ type, placeholder, title }) => {
-  const [inputValue, setInputValue] = useState("");
-  console.log(inputValue);
-
-  return (
-    <label className={styles.label}>
-      <span>{title}</span>
-      <input
-        type={type}
-        id={type}
-        placeholder={placeholder}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-    </label>
-  );
-};
+const TextField: React.FC<TextFieldProps> = ({
+    type,
+    placeholder,
+    title,
+}) => {
+    return (
+        <label htmlFor={type} className={styles.label}>
+            <span>{title}</span>
+            <input
+                type={type}
+                id={type}
+                placeholder={placeholder}
+            />
+        </label>
+    );
+}
 
 export default TextField;

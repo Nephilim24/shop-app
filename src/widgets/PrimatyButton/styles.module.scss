@@ -1,0 +1,17 @@
+.button {
+    box-shadow: 0 10px 40px 0 rgba(122, 129, 190, 0.16);
+    background: #fe724c;
+    border: none;
+    outline: none;
+    padding: 18px 76px;
+    border-radius: 28px;
+
+    & span {
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    }
+}
