@@ -5,6 +5,9 @@ const TabBar: React.FC = () => {
   return (
     <aside className={styles.tabbar}>
       <ProfileWidget />
+      <ul>
+        <li></li>
+      </ul>
     </aside>
   );
 };
