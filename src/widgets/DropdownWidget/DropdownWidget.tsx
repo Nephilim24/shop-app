@@ -1,0 +1,59 @@
+import { useState } from "react";
+import "./DropdownWidget.scss";
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+const options: Option[] = [
+  { value: "", label: "Без фильтра" },
+  { value: "price", label: "Цене" },
+  { value: "rating", label: "Рейтингу" },
+];
+
+const DropdownWidget: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selected, setSelected] = useState<Option | null>(options[0]);
+
+  const toggleDropDown = () => setIsOpen((prev) => !prev);
+
+  const handleSelect = (option: Option) => {
+    setSelected(option);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="dropdown__wrapper">
+      <div className="dropdown" onClick={toggleDropDown}>
+        <svg
+          width="11"
+          height="12"
+          viewBox="0 0 11 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 1.73352C0 1.50146 0.0921873 1.2789 0.256282 1.1148C0.420376 0.950708 0.642936 0.858521 0.875 0.858521H9.625C9.85706 0.858521 10.0796 0.950708 10.2437 1.1148C10.4078 1.2789 10.5 1.50146 10.5 1.73352V2.95035C10.4999 3.25975 10.377 3.55645 10.1582 3.77519L7 6.93335V11.264C7.00002 11.3734 6.97207 11.481 6.91881 11.5765C6.86555 11.6721 6.78875 11.7524 6.6957 11.8099C6.60265 11.8674 6.49644 11.9002 6.38717 11.9051C6.27789 11.91 6.16917 11.8869 6.07133 11.838L3.90308 10.7542C3.78197 10.6936 3.6801 10.6005 3.60891 10.4854C3.53772 10.3702 3.5 10.2374 3.5 10.102V6.93335L0.341833 3.77519C0.123026 3.55645 6.6077e-05 3.25975 0 2.95035V1.73352Z"
+            fill="#767F9D"
+          />
+        </svg>
+        <span> Сортировать по: {selected?.label ?? ""}</span>
+      </div>
+
+      {isOpen && (
+        <ul>
+          {options.map((option) => (
+            <li key={option.value} onClick={() => handleSelect(option)}>
+              {option.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default DropdownWidget;

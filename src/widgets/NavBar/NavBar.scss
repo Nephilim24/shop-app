@@ -4,26 +4,32 @@
   justify-content: start;
   align-items: center;
   max-height: 50px;
+  gap: 20px;
 
   & h1 {
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
     color: #000;
-    margin-right: 12px;
   }
-  & div {
-    border: 1px solid #efefef;
-    border-radius: 10px;
-    padding: 9px 14px;
-    background-color: #fcfcfd;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: justify;
-    color: #9aa0b4;
+  & label {
     display: flex;
     align-items: center;
-    gap: 5px;
-    width: 187px;
+    margin-left: auto;
+    width: 100%;
+    max-width: 256px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    background: #fcfcfd;
+    padding: 16px 18px;
+    gap: 12px;
+
+    & input {
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        color: #9aa0b4;
+      }
+    }
   }
 }
